@@ -1,0 +1,6 @@
+.git
+.tasks
+node_modules
+dist
+public/mediapipe/wasm
+.DS_Store
