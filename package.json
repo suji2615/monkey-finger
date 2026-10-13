@@ -1,0 +1,22 @@
+{
+  "name": "monkey-motion-study",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "predev": "node scripts/copy-mediapipe-wasm.js",
+    "dev": "vite",
+    "prebuild": "node scripts/copy-mediapipe-wasm.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.22"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

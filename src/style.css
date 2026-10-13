@@ -1,0 +1,174 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #000;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+.motion-stage {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+}
+
+.gallery-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 450ms ease;
+}
+
+.gallery-video.is-visible {
+  opacity: 1;
+}
+
+.gallery-arrow {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  width: 76px;
+  height: 100px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #d3d3d3;
+  font: 300 40px/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: color 160ms ease, scale 160ms ease;
+}
+
+.gallery-arrow--previous {
+  left: 30px;
+}
+
+.gallery-arrow--next {
+  right: 30px;
+}
+
+.gallery-arrow:hover,
+.gallery-arrow:focus-visible {
+  color: #f0f0f0;
+  scale: 1.08;
+}
+
+.gallery-arrow:focus-visible {
+  outline: 1px solid rgba(211, 211, 211, 0.7);
+  outline-offset: -8px;
+}
+
+#camera-toggle {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  min-width: 120px;
+  min-height: 44px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+#camera-toggle[data-state='loading'] {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+#camera-toggle:hover,
+#camera-toggle:focus-visible {
+  background: #000;
+  outline: 1px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+#camera-toggle:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+#camera-toggle[hidden],
+.camera-preview[hidden] {
+  display: none;
+}
+
+.camera-preview {
+  position: fixed;
+  z-index: 2;
+  right: 1.5vw;
+  bottom: 1.5vh;
+  width: 18vw;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: transparent;
+}
+
+.designer-signature {
+  position: fixed;
+  z-index: 2;
+  left: 1.5vw;
+  bottom: 1.5vh;
+  color: #000;
+  font: normal 400 20px/normal Arial, sans-serif;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+#camera-preview {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 600px) {
+  .camera-preview {
+    right: 3vw;
+    bottom: 3vh;
+    width: 28vw;
+  }
+
+  .designer-signature {
+    left: 3vw;
+    bottom: 3vh;
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="손끝의 움직임으로 제어하는 원숭이 영상" />
+    <title>Monkey Motion</title>
+  </head>
+  <body>
+    <main class="motion-stage" aria-label="손 움직임으로 제어하는 원숭이 영상">
+      <video class="gallery-video is-visible" preload="auto" playsinline muted aria-label="원숭이 영상"></video>
+      <video class="gallery-video" preload="none" playsinline muted aria-hidden="true"></video>
+      <button id="previous-video" class="gallery-arrow gallery-arrow--previous" type="button" aria-label="이전 영상">‹</button>
+      <button id="next-video" class="gallery-arrow gallery-arrow--next" type="button" aria-label="다음 영상">›</button>
+      <button id="camera-toggle" type="button">turn on camera</button>
+      <div class="designer-signature">@soozy.dsgn</div>
+      <div class="camera-preview" id="camera-preview-wrap" hidden>
+        <video id="camera-preview" autoplay muted playsinline aria-label="좌우 반전된 웹캠 미리 보기"></video>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
